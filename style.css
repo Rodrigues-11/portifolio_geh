@@ -1,125 +1,65 @@
-* {
-  box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
+  font-family: sans-serif;
+}
+
+body {
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #fff;
-  color: #111;
-}
-
-header {
+nav {
+  display: flex;
+  gap: 20px;
   padding: 20px;
-  text-align: center;
+  justify-content: center;
+  background: #f8f8f8;
 }
 
 nav a {
-  margin: 0 15px;
+  color: #000;
   text-decoration: none;
-  color: #111;
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.gallery {
-  column-count: 3;
-  column-gap: 20px;
-  padding: 40px;
-}
-
-.gallery-item {
-  break-inside: avoid;
-  margin-bottom: 30px;
-}
-
-.gallery-item img {
-  width: 100%;
-  display: block;
-  border-radius: 6px;
-  transition: transform 0.3s ease;
-}
-
-.gallery-item img:hover {
-  transform: scale(1.03);
-}
-
-.gallery-item h3 {
-  font-size: 1rem;
-  margin: 10px 0 5px;
-}
-
-.gallery-item p {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-footer {
-  text-align: center;
-  padding: 30px 10px;
-  background-color: #f9f9f9;
-  font-size: 0.9rem;
-  margin-top: 40px;
-  border-top: 1px solid #ddd;
-}
-
-footer a {
-  color: #111;
-  text-decoration: underline;
-}
-
-/* Responsivo */
-@media (max-width: 900px) {
-  .gallery {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 600px) {
-  .gallery {
-    column-count: 1;
-  }
-}
-
-/* Animações */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.gallery-item {
-  animation: fadeIn 0.8s ease forwards;
-  opacity: 0;
-}
-
-/* Atraso em cascata para o efeito em cada item */
-.gallery-item:nth-child(1) { animation-delay: 0.1s; }
-.gallery-item:nth-child(2) { animation-delay: 0.2s; }
-.gallery-item:nth-child(3) { animation-delay: 0.3s; }
-.gallery-item:nth-child(4) { animation-delay: 0.4s; }
-/* Adicione mais conforme a quantidade de itens */
-
-nav a {
+  font-weight: bold;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #555;
 }
-html {
-  scroll-behavior: smooth;
+
+.gallery {
+  display: grid;
+  gap: 20px;
+  padding: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.gallery-item {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.section {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
 }
 
 .form-contato {
-  max-width: 500px;
-  margin: 20px auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -128,9 +68,8 @@ html {
 .form-contato input,
 .form-contato textarea {
   padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
   border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 .form-contato button {
@@ -139,9 +78,8 @@ html {
   padding: 12px;
   border: none;
   border-radius: 6px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 .form-contato button:hover {
@@ -149,17 +87,15 @@ html {
 }
 
 .botao-download {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #111;
+  background: #111;
   color: #fff;
   text-decoration: none;
+  padding: 10px 20px;
   border-radius: 6px;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
+  display: inline-block;
+  transition: background-color 0.3s;
 }
 
 .botao-download:hover {
   background-color: #333;
 }
-

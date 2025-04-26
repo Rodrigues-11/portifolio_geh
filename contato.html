@@ -16,18 +16,16 @@
 
   <main class="section">
     <h2>Contato</h2>
-    <p>Preencha o formulário abaixo para entrar em contato comigo:</p>
-
     <form action="https://formsubmit.co/seuemail@email.com" method="POST" class="form-contato">
+      <input type="hidden" name="_next" value="obrigado.html">
       <input type="text" name="name" placeholder="Seu nome" required>
       <input type="email" name="email" placeholder="Seu e-mail" required>
       <textarea name="message" rows="5" placeholder="Sua mensagem" required></textarea>
       <button type="submit">Enviar Mensagem</button>
-      <input type="hidden" name="_next" value="obrigado.html">
     </form>
 
     <h3>Download do Currículo</h3>
-    <p><a href="curriculo.pdf" download class="botao-download">Baixar Currículo PDF</a></p>
+    <a href="curriculo.pdf" download class="botao-download">Baixar Currículo PDF</a>
   </main>
 
   <footer>
